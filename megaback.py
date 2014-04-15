@@ -1,6 +1,11 @@
 from mega import Mega
 import sys
 
+# Configuration
+mega_username = ""
+mega_password = ""
+#
+
 script, action = sys.argv
 
 allowed_actions = ["upload","delete","cleanup"]
@@ -11,7 +16,7 @@ if action not in allowed_actions:
 
 mega = Mega()
 
-m = mega.login("","")
+m = mega.login(mega_username,mega_password)
 
 if action == "upload":
   filename = sys.argv[2]
